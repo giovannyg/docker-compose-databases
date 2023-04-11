@@ -17,7 +17,8 @@ services:
     image: '${IMAGE_CONTAINER_PREFIX}_mariadb10.7'
     container_name: '${IMAGE_CONTAINER_PREFIX}_mariadb10.7'
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      - MYSQL_ROOT_PASSWORD=secret
+      - TZ=UTC
     build: './mariadb'
     restart: unless-stopped
     ports:
